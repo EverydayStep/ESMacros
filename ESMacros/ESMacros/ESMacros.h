@@ -10,7 +10,7 @@
 #define ESMacros_h
 
 // gcd sync
-#define es_dispatch_main_sync_safe(block)\
+#define ES_Disparch_Main_Sync_Safe(block)\
 if (block == nil) {\
 return;\
 }\
@@ -21,7 +21,7 @@ dispatch_sync(dispatch_get_main_queue(), block);\
 }
 
 // gcd async
-#define es_dispatch_main_async_safe(block)\
+#define ES_Disparch_Main_Async_Safe(block)\
 if (block == nil) {\
 return;\
 }\
@@ -32,15 +32,15 @@ dispatch_async(dispatch_get_main_queue(), block);\
 }
 
 // safe block
-#define es_block_safe(block)\
+#define ES_Block_Safe(block)\
 if (block != nil) {\
 block();\
 } else {\
 }
 
 //self
-#define es_weakSelf(weakSelf)    __weak __typeof(&*self)weakSelf = self;
-#define es_strongSelf(strongSelf) __strong __typeof(&*self)strongSelf = self;
+#define ES_WeakSelf(weakSelf)    __weak __typeof(&*self)weakSelf = self;
+#define ES_StrongSelf(strongSelf) __strong __typeof(&*self)strongSelf = self;
 
 //log
 #ifdef DEBUG
@@ -48,5 +48,11 @@ block();\
 #else
 #  define ESLog(...)
 #endif
+
+//time
+#define ES_Perform_Time_Start NSDate *es_startDate = [NSDate date];
+#define ES_Perform_Time_End \
+NSTimeInterval time = [[NSDate date] timeIntervalSinceDate:es_startDate];\
+ESLog(@"%fms",time*1000);\
 
 #endif /* ESMacros_h */

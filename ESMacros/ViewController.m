@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ESMacros.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    ES_Perform_Time_Start
+    for (NSInteger i = 0; i < 10000; i++) {
+        NSLog(@"aaaa");
+    }
+    ES_Perform_Time_End
     // Do any additional setup after loading the view, typically from a nib.
 }
 
