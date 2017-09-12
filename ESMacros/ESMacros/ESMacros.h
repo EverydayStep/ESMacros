@@ -9,6 +9,10 @@
 #ifndef ESMacros_h
 #define ESMacros_h
 
+// Screen
+#define ES_Screen_Width           [UIScreen mainScreen].bounds.size.width
+#define ES_Screen_Height          [UIScreen mainScreen].bounds.size.height
+
 // gcd sync
 #define ES_Disparch_Main_Sync_Safe(block)\
 if (block == nil) {\
