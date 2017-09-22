@@ -54,6 +54,7 @@ block();\
 #endif
 
 //time
+//计算代码执行时间
 #define ES_Perform_Time_Start NSDate *es_startDate = [NSDate date];
 #define ES_Perform_Time_End \
 NSTimeInterval time = [[NSDate date] timeIntervalSinceDate:es_startDate];\
